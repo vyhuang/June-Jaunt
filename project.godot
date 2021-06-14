@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "Skill",
 "language": "GDScript",
 "path": "res://scripts/skill.gd"
+}, {
+"base": "Reference",
+"class": "SkillFactory",
+"language": "GDScript",
+"path": "res://scripts/skill_factory.gd"
 } ]
 _global_script_class_icons={
 "BattleConstants": "",
 "BattleUnit": "",
-"Skill": ""
+"Skill": "",
+"SkillFactory": ""
 }
 
 [application]

@@ -12,9 +12,14 @@ var state
 var opponents = []
 var allies = []
 
+const SkillFactory = preload("res://scripts/skill_factory.gd")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
   state = battle_constants.BATTLE_STATE.PAUSED
+  var factory = SkillFactory.new()
+  var skills = factory.get_all_skills()
+  print (skills)
   pass # Replace with function body.
 
 
