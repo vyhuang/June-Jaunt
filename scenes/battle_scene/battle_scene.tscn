@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/battle_scene/battle_controller.gd" type="Script" id=1]
+
+[node name="battle_scene" type="Node2D"]
+
+[node name="battle_controller" type="Node2D" parent="."]
+script = ExtResource( 1 )
