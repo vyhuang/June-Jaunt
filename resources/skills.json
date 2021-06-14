@@ -1,0 +1,12 @@
+{
+    "skills": [
+        {
+            "name": "bash",
+            "type": "health",
+            "crit_chance": "low",
+            "helpful_to_target": false,
+            "modifier": "-2",
+            "num_range": "narrow"
+        }
+    ]
+}
