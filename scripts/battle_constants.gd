@@ -26,15 +26,11 @@ enum STATUS {
     # afflicted's stats.
     WEAKENED, 
 
-    # Reduces the effects of the next negative action taken against the 
-    # recipient. Damage will be reduced by 25%, and status conditions will
-    # have a 25% chance of not being applied. Will also restore an amount
-    # of energy based on the recipient's stats.
-    BRACED,
     # Raises the critical chance of actions by one tier. Critical successes
     # for 'health' actions will apply a multiplier of 1.5. Critical successes
     # for 'status' actions will apply a multiplier of to the applied status' 
-    # duration.
+    # duration. Will also restore a set amount of energy based on the user's
+    # stats.
     FOCUSED,
     # Nullifies the next negative action taken against the recipient. Removes
     # the 'EXPOSED' status, but all other status conditions remain.
