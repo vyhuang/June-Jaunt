@@ -10,12 +10,11 @@ var current_energy : int
 var target_health : int
 var decay_rate = 1;
 
-enum STATUS {
-    UNCONSCIOUS, 
-    BLEEDING, BLINDED, STUNNED, WEAKENED, 
-    MENDING, SPIRITED}
 var skills : Array = []
 var status : Array = []
+
+const BattleConstants = preload("battle_constants.gd")
+onready var battle_constants : BattleConstants = BattleConstants.new()
 
 func get_max_health() -> int:
     return max_health
@@ -30,7 +29,7 @@ func get_cur_energy() -> int:
     return current_energy;
 
 func modify_health(mod : int):
-    if !status.has(STATUS.UNCONSCIOUS):
+    if !status.has(battle_constants.STATUS.UNCONSCIOUS):
         target_health += mod;
 
     if target_health >= current_health:
@@ -39,12 +38,12 @@ func modify_health(mod : int):
         target_health = min(target_health, 0) as int
 
 func modifyEnergy(mod : int):
-    if !status.has(STATUS.UNCONSCIOUS):
+    if !status.has(battle_constants.STATUS.UNCONSCIOUS):
         current_energy += mod;
 
 func knock_out():
     status.clear()
-    status.push_back(STATUS.UNCONSCIOUS)
+    status.push_back(battle_constants.STATUS.UNCONSCIOUS)
     target_health = 0
     current_health = 0
     current_energy = 0
