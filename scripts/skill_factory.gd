@@ -24,9 +24,11 @@ func parse_skills() -> Dictionary:
     if typeof(jsonResult.result) == TYPE_DICTIONARY:
         var parsed_skills = jsonResult.result["skills"] as Array
         for parsed_skill in parsed_skills:
-            var skill : Skill = Skill.new(parsed_skill.name, parsed_skill.type, 
-                    parsed_skill.crit_chance, parsed_skill.helpful_to_target,
-                    parsed_skill.modifier, parsed_skill.num_range) 
+            var skill : Skill = Skill.new(
+                    parsed_skill.name, parsed_skill.type, 
+                    parsed_skill.cost, parsed_skill.crit_chance, 
+                    parsed_skill.helpful_to_target, parsed_skill.modifier, 
+                    parsed_skill.num_range)
             result[skill.skill_name()] = skill
     else:
         push_error("could not parse res://resources/skills.json")

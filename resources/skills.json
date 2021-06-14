@@ -3,6 +3,7 @@
         {
             "name": "bash",
             "type": "health",
+            "cost": 1,
             "crit_chance": "low",
             "helpful_to_target": false,
             "modifier": "-2",
