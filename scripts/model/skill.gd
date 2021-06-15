@@ -22,9 +22,15 @@ var modifier : String
 # Only used for 'health' actions. Can be 'precise', 'narrow', 'wide'
 var num_range : String
 
+# Consists of up to two parts:
+#   1st part (required): 'self' or 'other'
+#   2nd part (optional): '+' and 'column', 'row', or 'adjacent'
+var possible_targets : String
+
 func _init(skill_name : String, skill_type : String, skill_cost : int, 
            skill_crit_chance : String, skill_helpful_to_target : bool,
-           skill_modifier : String, skill_num_range : String):
+           skill_modifier : String, skill_num_range : String, 
+           skill_possible_targets : String):
     self.name = skill_name
     self.type = skill_type
     self.cost = skill_cost
@@ -32,6 +38,7 @@ func _init(skill_name : String, skill_type : String, skill_cost : int,
     self.helpful_to_target = skill_helpful_to_target
     self.modifier = skill_modifier
     self.num_range = skill_num_range
+    self.possible_targets = skill_possible_targets
 
 func skill_name() -> String:
     return name

@@ -7,7 +7,8 @@
             "crit_chance": "low",
             "helpful_to_target": false,
             "modifier": "-2",
-            "num_range": "narrow"
+            "num_range": "narrow",
+            "possible_targets": "other"
         }
     ]
 }

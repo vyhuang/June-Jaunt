@@ -13,8 +13,18 @@ var decay_rate = 1;
 var skills : Array = []
 var status : Array = []
 
-const BattleConstants = preload("battle_constants.gd")
 onready var battle_constants : BattleConstants = BattleConstants.new()
+
+func _init(max_h : int, max_e : int, defined_skills : Array):
+    max_health = max_h
+    max_energy = max_e
+
+    current_health = max_health
+    target_health = max_health
+    current_energy = max_energy
+
+    for skill in defined_skills:
+        skills.push_back(skill)
 
 func get_max_health() -> int:
     return max_health

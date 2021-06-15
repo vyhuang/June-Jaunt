@@ -3,7 +3,7 @@ extends Reference
 class_name SkillFactory
 
 # what am I doing, geez.
-const Skill = preload("res://scripts/skill.gd")
+# const Skill = preload("res://scripts/model/skill.gd")
 var skills
 
 func get_all_skills() -> Array:
@@ -28,7 +28,7 @@ func parse_skills() -> Dictionary:
                     parsed_skill.name, parsed_skill.type, 
                     parsed_skill.cost, parsed_skill.crit_chance, 
                     parsed_skill.helpful_to_target, parsed_skill.modifier, 
-                    parsed_skill.num_range)
+                    parsed_skill.num_range, parsed_skill.possible_targets)
             result[skill.skill_name()] = skill
     else:
         push_error("could not parse res://resources/skills.json")

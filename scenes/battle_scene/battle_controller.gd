@@ -4,7 +4,7 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var BattleConstants = load("res://scripts/battle_constants.gd")
+#var BattleConstants = load("res://scripts/battle_constants.gd")
 onready var battle_constants : BattleConstants = BattleConstants.new()
 
 var state
@@ -12,7 +12,7 @@ var state
 var opponents = []
 var allies = []
 
-var SkillFactory = load("res://scripts/skill_factory.gd")
+#var SkillFactory = load("res://scripts/model/skill_factory.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,6 +20,10 @@ func _ready():
   var factory = SkillFactory.new()
   var skills = factory.get_all_skills()
   print (skills)
+
+  opponents.push_back(Slime.new())
+  allies.push_back(Slime.new())
+  print (opponents)
   pass # Replace with function body.
 
 
