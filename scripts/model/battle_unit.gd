@@ -70,3 +70,10 @@ func revive(rev_health : int, rev_energy : int):
 
 func get_next_action() -> Skill:
     return null;
+
+func _to_string():
+    var result : String = "[%s; health=<%s:%s>/%s,energy=%s/%s,defined_skills=%s,skills=%s,status=%s]"
+    return result % [self.unit_name, 
+        self.target_health, self.current_health, self.max_health,
+        self.current_energy, self.max_energy, 
+        self.defined_skills, self.skills, self.status]
