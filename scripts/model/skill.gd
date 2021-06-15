@@ -24,7 +24,10 @@ var num_range : String
 
 # Consists of up to two parts:
 #   1st part (required): 'self' or 'other'
-#   2nd part (optional): '+' and 'column', 'row', or 'adjacent'
+#   2nd part (optional): '+' and 'side', 'row', or 'adjacent'
+#   note: 'side' targeting will always hit the center
+#       <>  <>
+#     <>  <>  <>
 var possible_targets : String
 
 func _init(skill_name : String, skill_type : String, skill_cost : int, 
